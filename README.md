@@ -40,10 +40,16 @@
 
 
 https://user-images.githubusercontent.com/57941950/194851987-6bb7cd6b-39c9-41ba-a076-453c67709d46.mp4
-
-
-
+ 
 </div>
+
+The main idea of ​​creating this project is to create JWT Authentication system using .Net Core and React technologies.
+
+* When the application is run, the client makes a request to the server with email and password information. If the email and password information is correct, access token and refresh token are returned to the client.
+* It makes a request to an enpoint that is authorized on the server along with the client access token. If the access token is correct, the information is responded to the client.
+* In case the access token expires, the client makes a request to the server with a refresh token and the server returns a new access token in return.
+ 
+
 
 
 ## :hammer: Requirements
