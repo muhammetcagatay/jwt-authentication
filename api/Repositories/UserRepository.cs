@@ -16,12 +16,11 @@ namespace api.Repositories
             _context = context;
             _passwordHasher = passwordHasher;
 
+            // Auto migrate and add example user
             _context.Database.Migrate();
 
             if (!_context.User.Any())
             {
-
-
                 var user = new User { Email = "admin@gmail.com", Password = _passwordHasher.HashPassword("123456") };
 
                 _context.Add(user);
