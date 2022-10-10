@@ -46,23 +46,13 @@ https://user-images.githubusercontent.com/57941950/194851987-6bb7cd6b-39c9-41ba-
 </div>
 
 
-
-
-The main idea of ​​creating this project is to implement Microservices Architecture with  latest technology such as .Net 6, MongoDB, PostgreSQL, Docker. There are two services and one API Gateway in the project.
-
-* The Movie service uses MongoDB as its database. Movie service is a service that allows us to process movies, actors and categories.
-* The book service uses PostgreSQL as its database. The Book service is a service that allows us to perform operations on books, authors and categories.
-* API Gateway is an API Management tool that stands between clients and microservices. Ocelot used as library in API Gateway
-
-
-
 ## :hammer: Requirements
 
 Technologies needed to get the project up and running
 
 * [ASP.Net Core 3.1](https://dotnet.microsoft.com/en-us/download/dotnet/3.1)
 * [Docker](https://www.docker.com)
-* [npm](https://docs.npmjs.com/cli/v8/commands/npm-install)
+* [npm](https://nodejs.org/en/download/)
 
 ## :electric_plug: Installation
 
