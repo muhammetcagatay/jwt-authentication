@@ -25,7 +25,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#beginner-about-the-project">About The Project</a></li>
-    <li><a href="#hammer-built-with">Built With</a></li>
+    <li><a href="#hammer-requirements">Built With</a></li>
     <li><a href="#electric_plug-installation">Installation</a></li>
   </ol>
 </details>
@@ -93,6 +93,17 @@ Follow the steps below to run the project in your local
    ```sh
    npm start
    ```
+
+## :earth_americas: Endpoints
+Listening and serving API Gateway HTTPS on : 5001
+
+| Method | URL | Description |
+| --- | --- | --- |
+| `POST` | `/api/auth/login` | `Returns of Access Token and Refresh Token` |
+| `POST` | `/api/auth/refreshToken` | `Returns of new Access Token and Refresh Token` |
+| `GET - Authorize` | `/api/home` | `Returns the "Giriş Başarılı" message` |
+
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
