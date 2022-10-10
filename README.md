@@ -56,38 +56,47 @@ The main idea of ​​creating this project is to implement Microservices Archi
 
 
 
-## :hammer: Built With
+## :hammer: Requirements
 
-You can take a look at the programming languages, frameworks, databases and other tools I used while developing the project below.
+Technologies needed to get the project up and running
 
-* [.Net Core](https://docs.microsoft.com/tr-tr/dotnet/core/introduction)
-* [Entity Framework Core](https://docs.microsoft.com/tr-tr/ef/core/)
+* [ASP.Net Core 3.1](https://dotnet.microsoft.com/en-us/download/dotnet/3.1)
 * [Docker](https://www.docker.com)
-* [React](https://reactjs.org/)
-* [MsSQL](https://www.microsoft.com/tr-tr/sql-server/sql-server-2019)
-
+* [npm](https://docs.npmjs.com/cli/v8/commands/npm-install)
 
 ## :electric_plug: Installation
 
 Follow the steps below to run the project in your local
 
-1. Create sql server docker container
-   ```sh
-   docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=password123*" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest
-   ```
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/muhammetcagatay/jwt-authentication.git
    ```
+
+2. Create SQL Server Docker container
+   ```sh
+   docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=password123*" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest
+   ```
+
 3. Go to project folder
    ```sh
    cd jwt-authentication/api
    ```
-3. Go to project folder
+4. Restore and run api
    ```sh
    dotnet restore
+   dotnet run
    ```
-
+5. Open new terminal and install npm packages 
+   ```sh
+   cd client
+   npm install
+   ```
+   
+5. Run Client
+   ```sh
+   npm start
+   ```
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
