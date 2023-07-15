@@ -1,21 +1,8 @@
 
 <div align="center">
  
-  <h1> JWT Authentication </h1>
+  <h1> Virtual Web Socket </h1>
   
-</div>
-
-
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://github.com/muhammetcagatay/VivaceAPI">
-    <img src="http://jwt.io/img/logo-asset.svg" alt="Logo" width="400">
-  </a>
-
-  <p align="center">
-
-  </p>
 </div>
 
 
@@ -35,20 +22,9 @@
 <!-- ABOUT THE PROJECT -->
 ## :beginner: About The Project
 
-<div align="center">
-
-
-
-https://user-images.githubusercontent.com/57941950/194851987-6bb7cd6b-39c9-41ba-a076-453c67709d46.mp4
- 
-</div>
-
-The main idea of ​​creating this project is to create JWT Authentication system using .Net Core and React technologies.
-
-* When the application is run, the client makes a request to the server with email and password information. If the email and password information is correct, access token and refresh token are returned to the client.
-* It makes a request to an enpoint that is authorized on the server along with the client access token. If the access token is correct, the information is responded to the client.
-* In case the access token expires, the client makes a request to the server with a refresh token and the server returns a new access token in return.
- 
+Virtual Web Socket project using .NET that allows developers to test WebSocket functionality.
+Virtual Web Socket project provides an endpoint through which developers can connect to a WebSocket channel from any application and send desired messages over WebSocket with the ability to specify the number of messages, time intervals, and content.
+It serves as a useful tool for developers who want to experiment with WebSocket communication and validate the behavior of their applications in various scenarios. By facilitating easy and customizable message sending, the project simplifies the testing process and helps developers ensure the robustness and reliability of their WebSocket implementations.
 
 
 
@@ -56,9 +32,7 @@ The main idea of ​​creating this project is to create JWT Authentication sys
 
 Technologies needed to get the project up and running
 
-* [ASP.Net Core 3.1](https://dotnet.microsoft.com/en-us/download/dotnet/3.1)
 * [Docker](https://www.docker.com)
-* [npm](https://nodejs.org/en/download/)
 
 ## :electric_plug: Installation
 
@@ -66,42 +40,29 @@ Follow the steps below to run the project in your local
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/muhammetcagatay/jwt-authentication.git
+   git clone https://github.com/muhammetcagatay/virtual-web-socket
    ```
-
-2. Create SQL Server Docker container
-   ```sh
-   docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=password123*" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest
-   ```
-
-3. Go to project folder
+      
+2. Go to project folder
    ```sh
    cd jwt-authentication/api
    ```
-4. Restore and run api
+3. Create docker image and create and run docker container
    ```sh
-   dotnet restore
-   dotnet run
-   ```
-5. Open new terminal and install npm packages 
-   ```sh
-   cd client
-   npm install
-   ```
-   
-5. Run Client
-   ```sh
-   npm start
+   docker build -t virtual-web-socket .
+   docker run -p 80:80 virtual-web-socket
    ```
 
 ## :earth_americas: Endpoints
-Listening and serving API Gateway HTTPS on : 5001
+Listening and serving API and WebSocket on : 80
 
-| Method | URL | Description |
-| --- | --- | --- |
-| `POST` | `/api/auth/login` | `Returns of Access Token and Refresh Token` |
-| `POST` | `/api/auth/refreshToken` | `Returns of new Access Token and Refresh Token` |
-| `GET - Authorize` | `/api/home` | `Returns the "Giriş Başarılı" message` |
+The following url should be used to create a new websocket:
+**ws://localhost:80/ws/channel/{channelName}**
+
+#### The endpoint to be used to send the message
+| Method | Path | Query Params | Body
+| --- | --- | --- | --- |
+| `POST` | `/api/socket/sendMessage` | **channelName :** The web socket channel name to which the message will be sent <br/>  **messageCount :** number of messages to be sent <br/> **interval :** time interval between messages| json model to be sent over web socket|
 
 
 
